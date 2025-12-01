@@ -8,14 +8,14 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 px-6 md:px-12 bg-secondary/30" ref={ref}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        {/* Left - Image */}
+        {/* Left - Image (Kept exactly the same) */}
         <motion.div
           className="relative"
           initial={{ opacity: 0, x: -60 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="aspect-[3/4] overflow-hidden">
+          <div className="aspect-[3/4] overflow-hidden rounded-sm">
             <img
               src="https://res.cloudinary.com/duv8bi3tc/image/upload/v1764497825/WhatsApp_Image_2025-06-29_at_16.03.39_xqg65a.jpg"
               alt="Prateek Singh"
@@ -35,7 +35,7 @@ const AboutSection = () => {
         {/* Right - Content */}
         <div>
           <motion.div
-            className="mb-12"
+            className="mb-10"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -48,56 +48,70 @@ const AboutSection = () => {
             </p>
           </motion.div>
 
+          {/* THE NEW BIO: Professional Pitch */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <p className="text-lg md:text-xl text-foreground leading-relaxed">
-              I'm Prateek Singh, a 2nd year B.Tech student at ABES Engineering College 
-              with a passion for creating at the intersection of technology and design.
-            </p>
+            <h3 className="text-2xl font-semibold leading-tight text-foreground">
+              I sit at the intersection of <span className="italic text-primary/80">Code</span> and <span className="italic text-primary/80">Culture</span>.
+            </h3>
             
             <p className="text-muted-foreground leading-relaxed">
-              My journey spans across multiple creative disciplines — from building 
-              responsive web applications to crafting visual identities and capturing 
-              moments through my lens. I believe in the power of thoughtful design 
-              and clean code to create experiences that resonate.
+              As a B.Tech student specializing in Electrical & Computer Science, I don't just write code—I build ecosystems. My work bridges the gap between technical logic and human experience.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              Beyond technical skills, I bring experience in marketing strategy and 
-              sponsorship acquisition, understanding how to connect brands with their 
-              audiences. Whether it's pixels on a screen or partnerships on paper, 
-              I approach every project with the same dedication to excellence.
+              Currently, I am focused on full-stack development using the <strong>MERN stack (Next.js, Node, MongoDB)</strong> to build scalable applications. Beyond the terminal, I lead marketing strategies and sponsorship acquisition for major college summits, proving that I understand both the <em>product</em> and the <em>market</em>.
             </p>
 
-            <p className="text-muted-foreground leading-relaxed">
-              When I'm not coding or designing, you'll find me exploring new photography 
-              techniques, experimenting with Adobe Lightroom, or working on the next 
-              creative challenge that comes my way.
-            </p>
+            {/* Resume Button */}
+            <div className="pt-2">
+               <a 
+                 href="/resume.pdf" // Update this path later
+                 className="inline-block border border-foreground/50 px-6 py-3 text-sm font-bold uppercase hover:bg-foreground hover:text-background transition-colors duration-300"
+               >
+                 Download Resume
+               </a>
+            </div>
           </motion.div>
 
-          {/* Stats */}
+          {/* NEW SECTION: Education (Replaces Stats) */}
           <motion.div
-            className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border"
+            className="mt-16 pt-10 border-t border-border"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div>
-              <p className="text-display text-4xl md:text-5xl text-foreground">2+</p>
-              <p className="text-muted-foreground text-sm mt-2">Years Experience</p>
-            </div>
-            <div>
-              <p className="text-display text-4xl md:text-5xl text-foreground">5+</p>
-              <p className="text-muted-foreground text-sm mt-2">Projects Done</p>
-            </div>
-            <div>
-              <p className="text-display text-4xl md:text-5xl text-foreground">4</p>
-              <p className="text-muted-foreground text-sm mt-2">Disciplines</p>
+            <h4 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-8">
+              Education Timeline
+            </h4>
+
+            <div className="space-y-8">
+              {/* College */}
+              <div className="relative pl-8 border-l border-foreground/20 hover:border-foreground/80 transition-colors duration-300">
+                <span className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-foreground"></span>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                  <h5 className="text-lg font-bold text-foreground">ABES Engineering College</h5>
+                  <span className="text-xs font-medium bg-foreground/10 text-foreground px-2 py-1 rounded">2023 — Present</span>
+                </div>
+                <p className="font-medium text-muted-foreground mb-2">B.Tech in Electrical & Computer Science</p>
+                <p className="text-xs text-muted-foreground/80">
+                  NEC Illuminate Finalist (IIT Bombay) • E-Cell Core Team
+                </p>
+              </div>
+
+              {/* High School */}
+              <div className="relative pl-8 border-l border-foreground/20 hover:border-foreground/80 transition-colors duration-300">
+                <span className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-background border border-foreground"></span>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                  <h5 className="text-lg font-bold text-foreground">Lucknow Public School</h5>
+                  <span className="text-xs font-medium text-muted-foreground">2021 — 2023</span>
+                </div>
+                <p className="font-medium text-muted-foreground">Intermediate (PCM)</p>
+              </div>
             </div>
           </motion.div>
         </div>
