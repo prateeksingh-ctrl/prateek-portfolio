@@ -28,7 +28,7 @@ const App = () => (
 
 <Route path="*" element={<NotFound />} />
 </Routes>
-</BrowserRouter>
+<BrowserRouter basename="/prateek-portfolio"></BrowserRouter>
 </TooltipProvider>
 </QueryClientProvider>
 
