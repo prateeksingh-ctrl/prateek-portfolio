@@ -18,7 +18,7 @@ const App = () => (
 
 <Sonner />
 
-<BrowserRouter>
+<BrowserRouter basename="/prateek-portfolio"></BrowserRouter>
 
 <Routes>
 
