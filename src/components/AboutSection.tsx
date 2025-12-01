@@ -64,19 +64,9 @@ const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              Currently, I am focused on full-stack development using the <strong>MERN stack (Next.js, Node, MongoDB)</strong> to build scalable applications. Beyond the terminal, I lead marketing strategies and sponsorship acquisition for major college summits, proving that I understand both the <em>product</em> and the <em>market</em>.
+              Currently, I am focused on learning Data Structures and Algorithms ,alongwith sharping my skills in webdev  <strong>Full Stack (Next.js, React,javascript,html)</strong> to build scalable web apps and understand various patterns in data structures. Beyond the terminal, I lead marketing strategies and sponsorship acquisition for College Events and i am also a part of the entrpreneurial cell of ABESEC and i also have a good command over designing visuals through canva and figma , proving that I understand both the <em>product</em> and the <em>market</em>.
             </p>
-
-            {/* Resume Button */}
-            <div className="pt-2">
-               <a 
-                 href="/resume.pdf" // Update this path later
-                 className="inline-block border border-foreground/50 px-6 py-3 text-sm font-bold uppercase hover:bg-foreground hover:text-background transition-colors duration-300"
-               >
-                 Download Resume
-               </a>
-            </div>
-          </motion.div>
+            </motion.div>
 
           {/* NEW SECTION: Education (Replaces Stats) */}
           <motion.div
@@ -95,11 +85,11 @@ const AboutSection = () => {
                 <span className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-foreground"></span>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
                   <h5 className="text-lg font-bold text-foreground">ABES Engineering College</h5>
-                  <span className="text-xs font-medium bg-foreground/10 text-foreground px-2 py-1 rounded">2023 — Present</span>
+                  <span className="text-xs font-medium bg-foreground/10 text-foreground px-2 py-1 rounded">2024 — Present</span>
                 </div>
                 <p className="font-medium text-muted-foreground mb-2">B.Tech in Electrical & Computer Science</p>
                 <p className="text-xs text-muted-foreground/80">
-                  NEC Illuminate Finalist (IIT Bombay) • E-Cell Core Team
+                  NEC Illuminate Finalist (IIT Bombay) • E-Cell Core Team Member • Graphic Designer in Samvaad Club
                 </p>
               </div>
 
@@ -107,12 +97,20 @@ const AboutSection = () => {
               <div className="relative pl-8 border-l border-foreground/20 hover:border-foreground/80 transition-colors duration-300">
                 <span className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-background border border-foreground"></span>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                  <h5 className="text-lg font-bold text-foreground">Lucknow Public School</h5>
-                  <span className="text-xs font-medium text-muted-foreground">2021 — 2023</span>
+                  <h5 className="text-lg font-bold text-foreground">JC International Public School</h5>
+                  <span className="text-xs font-medium text-muted-foreground">2022 — 2024</span>
                 </div>
                 <p className="font-medium text-muted-foreground">Intermediate (PCM)</p>
               </div>
             </div>
+             <div className="relative pl-8 border-l border-foreground/20 hover:border-foreground/80 transition-colors duration-300">
+                <span className="absolute -left-[5px] top-0 h-2.5 w-2.5 rounded-full bg-background border border-foreground"></span>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                  <h5 className="text-lg font-bold text-foreground">HP Defence Academy</h5>
+                  <span className="text-xs font-medium text-muted-foreground">2020 — 2022</span>
+                </div>
+                <p className="font-medium text-muted-foreground">HighSchool</p>
+              </div>
           </motion.div>
         </div>
       </div>

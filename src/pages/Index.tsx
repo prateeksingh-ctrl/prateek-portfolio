@@ -9,7 +9,6 @@ import MarqueeSection from "@/components/MarqueeSection";
 import SkillsSection from "@/components/SkillsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(() => {
@@ -54,8 +53,6 @@ const Index = () => {
 
           <ContactSection />
         </main>
-
-        <Footer />
       </div>
     </>
   );

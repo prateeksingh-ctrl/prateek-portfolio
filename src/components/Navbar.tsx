@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Services", href: "#services" },
+    { name: "Expertise", href: "#services" },
     { name: "Works", href: "#works" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* LEFT: Branding */}
         <div className="flex-1">
           <a href="#" className="text-lg font-bold tracking-tighter uppercase">
-            Prateek Singh
+            PS
           </a>
         </div>
 

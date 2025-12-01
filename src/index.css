@@ -138,7 +138,8 @@ scroll-behavior: smooth;
 
 
 body {
-
+ overflow-x: hidden; /* Prevents side-scrolling glitches */
+  background-color: #ffffff;
 @apply bg-background text-foreground;
 
 font-family: var(--font-body);
