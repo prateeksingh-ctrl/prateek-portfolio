@@ -1,0 +1,490 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+
+@layer base {
+
+:root {
+--background: 0 0% 100%; /* Pure White */
+  --foreground: 0 0% 10%; /* Almost Black (#1A1A1A) - softer than pure black */
+
+  --card: 0 0% 100%; /* Pure White */
+  --card-foreground: 0 0% 10%; /* Almost Black */
+
+  --popover: 0 0% 100%; /* Pure White */
+  --popover-foreground: 0 0% 10%; /* Almost Black */
+
+  --primary: 0 0% 10%; /* Almost Black (Buttons are dark) */
+  --primary-foreground: 0 0% 100%; /* White (Text on buttons) */
+
+  --secondary: 0 0% 96%; /* Very Light Gray (Subtle background) */
+  --secondary-foreground: 0 0% 10%; /* Almost Black */
+
+  --muted: 0 0% 96%; /* Very Light Gray */
+  --muted-foreground: 0 0% 45%; /* Medium Gray (For metadata/captions) */
+
+  --accent: 0 0% 96%; /* Very Light Gray (Hover state) */
+  --accent-foreground: 0 0% 10%; /* Almost Black */
+
+  --destructive: 0 84.2% 60.2%; /* Red (Kept for errors) */
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 0 0% 90%; /* Light Gray (#E5E5E5 - The key divider color) */
+  --input: 0 0% 90%; /* Light Gray */
+  --ring: 0 0% 10%; /* Almost Black */
+
+--radius: 0.5rem;
+
+
+
+/* Custom design tokens */
+
+--font-display: 'Bebas Neue', sans-serif;
+
+--font-body: 'Inter', sans-serif;
+
+
+
+/* Animation timings */
+
+--transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+--transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+}
+
+
+
+.dark {
+
+--background: 30 10% 8%;
+
+--foreground: 40 20% 94%;
+
+
+
+--card: 30 10% 12%;
+
+--card-foreground: 40 20% 94%;
+
+
+
+--popover: 30 10% 12%;
+
+--popover-foreground: 40 20% 94%;
+
+
+
+--primary: 40 20% 94%;
+
+--primary-foreground: 30 10% 8%;
+
+
+
+--secondary: 30 10% 18%;
+
+--secondary-foreground: 40 20% 90%;
+
+
+
+--muted: 30 10% 20%;
+
+--muted-foreground: 35 10% 60%;
+
+
+
+--accent: 30 60% 55%;
+
+--accent-foreground: 30 10% 8%;
+
+
+
+--border: 30 10% 20%;
+
+--input: 30 10% 20%;
+
+--ring: 40 20% 94%;
+
+}
+
+}
+
+
+
+@layer base {
+
+* {
+
+@apply border-border;
+
+}
+
+
+
+html {
+
+scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+@apply bg-background text-foreground;
+
+font-family: var(--font-body);
+
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+
+font-family: var(--font-display);
+
+letter-spacing: 0.02em;
+
+}
+
+}
+
+
+
+@layer components {
+
+.text-display {
+
+font-family: var(--font-display);
+
+@apply tracking-tight leading-none;
+
+}
+
+
+
+.text-body {
+
+font-family: var(--font-body);
+
+}
+
+
+
+/* Magnetic button hover effect */
+
+.magnetic-btn {
+
+@apply relative overflow-hidden transition-all duration-300;
+
+}
+
+
+
+.magnetic-btn::before {
+
+content: '';
+
+@apply absolute inset-0 bg-foreground scale-x-0 origin-left transition-transform duration-500;
+
+transition-timing-function: var(--transition-smooth);
+
+}
+
+
+
+.magnetic-btn:hover::before {
+
+@apply scale-x-100;
+
+}
+
+
+
+.magnetic-btn span {
+
+@apply relative z-10 transition-colors duration-300;
+
+}
+
+
+
+.magnetic-btn:hover span {
+
+@apply text-background;
+
+}
+
+
+
+/* Link underline animation */
+
+.link-hover {
+
+@apply relative;
+
+}
+
+
+
+.link-hover::after {
+
+content: '';
+
+@apply absolute bottom-0 left-0 w-full h-[1px] bg-foreground scale-x-0 origin-right transition-transform duration-500;
+
+transition-timing-function: var(--transition-smooth);
+
+}
+
+
+
+.link-hover:hover::after {
+
+@apply scale-x-100 origin-left;
+
+}
+
+
+
+/* Section divider */
+
+.section-divider {
+
+@apply w-full h-px bg-border;
+
+}
+
+
+
+/* Service card hover */
+
+.service-card {
+
+@apply border border-border p-8 transition-all duration-500;
+
+}
+
+
+
+.service-card:hover {
+
+@apply bg-secondary border-foreground/20;
+
+}
+
+
+
+/* Project card */
+
+.project-card {
+
+@apply relative overflow-hidden cursor-pointer;
+
+}
+
+
+
+.project-card img {
+
+@apply transition-transform duration-700;
+
+transition-timing-function: var(--transition-smooth);
+
+}
+
+
+
+.project-card:hover img {
+
+@apply scale-105;
+
+}
+
+
+
+/* Marquee animation */
+
+@keyframes marquee {
+
+0% {
+
+transform: translateX(0%);
+
+}
+
+100% {
+
+transform: translateX(-50%);
+
+}
+
+}
+
+
+
+.animate-marquee {
+
+animation: marquee 20s linear infinite;
+
+}
+
+
+
+/* Text reveal animation */
+
+@keyframes text-reveal {
+
+0% {
+
+clip-path: inset(0 100% 0 0);
+
+}
+
+100% {
+
+clip-path: inset(0 0 0 0);
+
+}
+
+}
+
+
+
+.text-reveal {
+
+animation: text-reveal 1s var(--transition-smooth) forwards;
+
+}
+
+
+
+/* Fade slide up */
+
+@keyframes fade-slide-up {
+
+0% {
+
+opacity: 0;
+
+transform: translateY(40px);
+
+}
+
+100% {
+
+opacity: 1;
+
+transform: translateY(0);
+
+}
+
+}
+
+
+
+.animate-fade-slide-up {
+
+animation: fade-slide-up 0.8s var(--transition-smooth) forwards;
+
+}
+
+
+
+/* Scale in */
+
+@keyframes scale-in {
+
+0% {
+
+opacity: 0;
+
+transform: scale(0.9);
+
+}
+
+100% {
+
+opacity: 1;
+
+transform: scale(1);
+
+}
+
+}
+
+
+
+.animate-scale-in {
+
+animation: scale-in 0.6s var(--transition-smooth) forwards;
+
+}
+
+
+
+/* Horizontal scroll container */
+
+.horizontal-scroll {
+
+@apply flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide;
+
+}
+
+
+
+.horizontal-scroll::-webkit-scrollbar {
+
+display: none;
+
+}
+
+
+
+/* Skill pill */
+
+.skill-pill {
+
+@apply px-6 py-3 border border-border rounded-full text-sm font-medium transition-all duration-300;
+
+}
+
+
+
+.skill-pill:hover {
+
+@apply bg-foreground text-background border-foreground;
+
+}
+
+}
+
+
+
+@layer utilities {
+
+.scrollbar-hide {
+
+-ms-overflow-style: none;
+
+scrollbar-width: none;
+
+}
+
+
+
+.scrollbar-hide::-webkit-scrollbar {
+
+display: none;
+
+}
+
+}
